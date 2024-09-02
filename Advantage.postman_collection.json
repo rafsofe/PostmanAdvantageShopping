@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "38309625-a5d7-4498-b0e2-dcd700563c7b",
+		"name": "Advantage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Lista com todos os produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "https://www.advantageonlineshopping.com/catalog/api/v1/products",
+							"protocol": "https",
+							"host": [
+								"www",
+								"advantageonlineshopping",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realize a busca de um produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "UmFmYWVsX3Rlc3RlXzAxOkFiMTIzNDU2Nzg=",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "https://www.advantageonlineshopping.com/catalog/api/v1/products/search?name=phone",
+							"protocol": "https",
+							"host": [
+								"www",
+								"advantageonlineshopping",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"api",
+								"v1",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "phone"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrinho",
+			"item": [
+				{
+					"name": "Adicionar produto no carrinho",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic UmFmYWVsX3Rlc3RlXzAxOkFiMTIzNDU2Nzg="
+							}
+						],
+						"url": {
+							"raw": "https://www.advantageonlineshopping.com/order/api/v1/carts/561266923/product/145/color/3683D1?hasWarranty=false&quantity=2",
+							"protocol": "https",
+							"host": [
+								"www",
+								"advantageonlineshopping",
+								"com"
+							],
+							"path": [
+								"order",
+								"api",
+								"v1",
+								"carts",
+								"561266923",
+								"product",
+								"145",
+								"color",
+								"3683D1"
+							],
+							"query": [
+								{
+									"key": "hasWarranty",
+									"value": "false"
+								},
+								{
+									"key": "quantity",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar produtos no carrinho",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic UmFmYWVsX3Rlc3RlXzAxOkFiMTIzNDU2Nzg="
+							}
+						],
+						"url": {
+							"raw": "https://www.advantageonlineshopping.com/order/api/v1/carts/561266923?",
+							"protocol": "https",
+							"host": [
+								"www",
+								"advantageonlineshopping",
+								"com"
+							],
+							"path": [
+								"order",
+								"api",
+								"v1",
+								"carts",
+								"561266923"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar produtos do carrinho",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic UmFmYWVsX3Rlc3RlXzAxOkFiMTIzNDU2Nzg="
+							}
+						],
+						"url": {
+							"raw": "https://www.advantageonlineshopping.com/order/api/v1/carts/561266923",
+							"protocol": "https",
+							"host": [
+								"www",
+								"advantageonlineshopping",
+								"com"
+							],
+							"path": [
+								"order",
+								"api",
+								"v1",
+								"carts",
+								"561266923"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualize a imagem de um produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic UmFmYWVsX3Rlc3RlXzAxOkFiMTIzNDU2Nzg="
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/rafaelfernandes/Downloads/teste.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://www.advantageonlineshopping.com/catalog/api/v1/product/image/561266923/77/414141?product_id=13",
+							"protocol": "https",
+							"host": [
+								"www",
+								"advantageonlineshopping",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"api",
+								"v1",
+								"product",
+								"image",
+								"561266923",
+								"77",
+								"414141"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "13"
+								},
+								{
+									"key": "images",
+									"value": "ABCDEF%23%232300",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
